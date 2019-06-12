@@ -1,0 +1,16 @@
+<select [(ngModel)]="tipoSeleccionado" class="custom-select">
+  <option *ngFor="let tipo of tipos" [value]="tipo.id">
+    {{ tipo.texto }}
+  </option>
+</select>
+
+<div class="card-header-submenu">
+  <span>
+    <i class="fa" [ngClass]="tipos[tipoSeleccionado].clase"></i>
+    {{ tipos[tipoSeleccionado].texto }}
+  </span>
+</div>
+<hr />
+<p>tipoSeleccionado: <input [(ngModel)]="tipoSeleccionado" /></p>
+<div>tipoSeleccionado: {{ tipoSeleccionado | json }}</div>
+<div>tipos[tipoSeleccionado]: {{ tipos[tipoSeleccionado] | json }}</div>
